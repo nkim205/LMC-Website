@@ -16,7 +16,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 body {
   margin: 0;
   background: var(--cream);
@@ -288,3 +288,59 @@ p { margin: 0 0 .75rem; }
 @media (max-width: 480px) {
   .spark { display: none; }
 }
+
+/* ---------- Added from peer feedback ---------- */
+.topnav { position: sticky; top: 0; z-index: 50; background: rgba(251,247,234,.96); border-bottom: 3px solid var(--gold); backdrop-filter: blur(6px); }
+.topnav-inner { display: flex; align-items: center; gap: 1rem; padding: .5rem 0; }
+.topnav .brand { font-family: var(--head); font-weight: 900; color: var(--forest-deep); text-decoration: none; text-transform: uppercase; font-size: .9rem; white-space: nowrap; }
+.topnav ul { list-style: none; display: flex; gap: 1.1rem; margin: 0 auto; padding: 0; overflow-x: auto; }
+.topnav ul a { font-weight: 700; color: var(--forest); text-decoration: none; white-space: nowrap; font-size: .95rem; }
+.topnav ul a:hover { color: var(--gold-deep); text-decoration: underline; }
+.nav-btn { padding: .4rem 1rem; font-size: .85rem; white-space: nowrap; }
+@media (max-width: 720px) {
+  .topnav-inner { flex-wrap: wrap; gap: .4rem .8rem; }
+  .topnav .brand { display: none; }
+  .topnav ul { order: 2; width: 100%; margin: 0; }
+  .nav-btn { margin-left: auto; }
+}
+.hero { padding-top: 2.5rem; }
+.source-note a, .card h3 a { color: var(--forest); }
+.card h3 a:hover { color: var(--gold-deep); }
+.subhead { text-align: center; font-size: 1.5rem; font-weight: 900; color: var(--forest-deep); margin: 2.5rem 0 1.25rem; }
+
+.compare { display: grid; gap: 1rem; align-items: stretch; max-width: 880px; margin: 0 auto; }
+.compare-col { border: 3px solid var(--ink); border-radius: var(--radius); padding: 1.25rem 1.5rem; background: #fff; }
+.compare-col h3 { font-size: 1.25rem; margin-bottom: .5rem; text-transform: uppercase; }
+.compare-col ul { margin: 0; padding-left: 1.2rem; }
+.compare-col li { margin-bottom: .35rem; }
+.compare-col.before { background: #f1ece0; }
+.compare-col.before h3 { color: #6b6350; }
+.compare-col.after { box-shadow: 6px 6px 0 var(--gold); border-color: var(--forest); }
+.compare-col.after h3 { color: var(--forest); }
+.compare-arrow { width: 28px; height: 18px; margin: 0 auto; background: var(--forest); clip-path: polygon(0 35%, 60% 35%, 60% 0, 100% 50%, 60% 100%, 60% 65%, 0 65%); transform: rotate(90deg); align-self: center; }
+@media (min-width: 720px) {
+  .compare { grid-template-columns: 1fr auto 1fr; }
+  .compare-arrow { transform: none; }
+}
+
+/* larger sample alert and dashboard */
+.alert-card { max-width: 400px; padding: 1.3rem; font-size: 1.05rem; }
+.alert-head { font-size: 1.15rem; }
+.alert-card dt { font-size: 1rem; width: 6.5rem; }
+.alert-card dd { font-size: 1.05rem; }
+.alert-foot { font-size: .8rem; color: #55604f; margin: .6rem 0 0; }
+.laptop { max-width: 440px; }
+.laptop-screen { aspect-ratio: auto; padding: .7rem; }
+.dash-title { display: flex; justify-content: space-between; gap: .5rem; }
+.dash-title span { font-weight: 700; background: var(--gold); color: var(--forest-deep); border-radius: 4px; padding: 0 .35rem; font-size: .65rem; align-self: center; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; margin-bottom: .5rem; }
+.kpis div { background: var(--sage); border-radius: 6px; padding: .3rem; text-align: center; line-height: 1.1; }
+.kpis b { display: block; font-family: var(--head); font-weight: 900; font-size: 1.1rem; color: var(--forest-deep); }
+.kpis span { font-size: .65rem; }
+.dash-body { height: auto; }
+.chart, .toplist { min-width: 0; }
+.chart-title { font-size: .65rem; font-weight: 700; margin: 0 0 .25rem; color: var(--forest); }
+.bars { height: 90px; margin-bottom: 1rem; position: relative; }
+.bars span { position: relative; }
+.bars span i { position: absolute; top: 100%; left: 0; right: 0; text-align: center; font-style: normal; font-size: .55rem; color: #55604f; margin-top: 2px; }
+.toplist ol { margin: 0; padding-left: 1.1rem; font-size: .72rem; }
